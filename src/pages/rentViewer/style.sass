@@ -1,0 +1,79 @@
+.viewer
+  gap: 2em 4em
+  display: grid
+  place-items: start
+  padding-bottom: 3em
+  place-content: start
+  grid-template-columns: repeat(var(--_number, 4), 1fr)
+
+  > .accordion
+    width: 100%
+    grid-column: span 2
+
+  &--thumbnail
+    width: 100%
+    height: 25em
+    object-fit: cover
+    grid-column: span 4
+    border-radius: 1.5em
+    object-position: center top
+
+  &__info
+    gap: .25em
+    display: flex
+    grid-column: span 3
+    flex-direction: column
+
+    &--title
+      font-size: 2em
+      color: #FF6060
+
+    &--location
+      margin-bottom: 1.5em
+
+  &__credits
+    gap: 1.5em
+    display: flex
+    align-items: end
+    flex-direction: column
+
+    &__author
+      gap: 1em
+      display: flex
+      align-items: center
+
+      &--name
+        color: #FF6060
+        line-height: 145%
+        text-align: right
+
+      &--avatar
+        width: 3.5em
+        border-radius: 50%
+
+    &__mark
+      display: flex
+
+      &--star
+        width: 2em
+        display: grid
+        color: #E3E3E3
+        place-items: center
+        aspect-ratio: 1 / 1
+
+        &.active
+          color: #FF6060
+
+@media screen and (max-width: 728px)
+  .viewer
+    > *
+      grid-column: span 4 !important
+
+    &--thumbnail
+      height: 22em
+
+    &__credits
+      width: 100%
+      align-items: center
+      flex-direction: row-reverse
+      justify-content: space-between
