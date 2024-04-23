@@ -1,16 +1,18 @@
 import './style.sass'
+import {Rent} from "../../../assets/mocks/rent.ts";
+import {NavLink} from "react-router-dom";
 
 type Props = {
-  title?: string,
-  banner?: string
+  rent: Rent | undefined
 }
 
-export default function LocationCard ({ title, banner }: Props) {
+export default function LocationCard ({ rent }: Props) {
   return <article className="card">
-    {banner && <img src={banner} alt="" />}
+    {rent?.id && <NavLink to={`/rent/${rent.id}`} className="card--link"></NavLink>}
+    {rent?.thumbnail && <img src={rent.thumbnail} alt="" />}
 
     <div className="card--overlay">
-      <h2 className="card--title">{title ?? 'Titre de la location'}</h2>
+      <h2 className="card--title">{rent?.title ?? 'Titre de la location'}</h2>
     </div>
   </article>
 }
