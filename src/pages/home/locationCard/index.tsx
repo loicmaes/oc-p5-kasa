@@ -7,9 +7,10 @@ type Props = {
 }
 
 export default function LocationCard ({ rent }: Props) {
-  return <article className="card">
+  return <article className="card" style={{
+    backgroundImage: `url('/images/rent/${rent?.thumbnail}')`,
+  }}>
     {rent?.id && <NavLink to={`/rent/${rent.id}`} className="card--link"></NavLink>}
-    {rent?.thumbnail && <img src={rent.thumbnail} alt="" />}
 
     <div className="card--overlay">
       <h2 className="card--title">{rent?.title ?? 'Titre de la location'}</h2>
