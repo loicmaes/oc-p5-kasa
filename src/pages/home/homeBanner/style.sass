@@ -1,0 +1,32 @@
+.home-banner
+  width: 100%
+  overflow: hidden
+  padding: 4em 2em
+  text-align: center
+  isolation: isolate
+  position: relative
+  border-radius: 2em
+  background-size: cover
+  background-position: center
+  box-shadow: 0 .25em .25em 0 rgba(0, 0, 0, .25)
+  background-image: url('/images/home-banner.png')
+
+  &::before
+    inset: 0
+    content: ''
+    opacity: .6
+    z-index: -1
+    background: black
+    position: absolute
+
+  &--title
+    color: white
+    font-size: 2.5em
+    font-weight: bold
+
+@media screen and (max-width: 728px)
+  .banner
+    text-align: left
+
+    &--title
+      font-size: 2rem
