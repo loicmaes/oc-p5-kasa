@@ -1,0 +1,41 @@
+.nav
+  top: 0
+  z-index: 10
+  display: flex
+  inset-inline: 0
+  padding: 2em 5em
+  position: sticky
+  background: white
+  justify-content: space-between
+
+  &--logo
+    height: 2em
+
+  &__menu
+    gap: 2em
+    display: flex
+    align-items: center
+
+    &--link
+      position: relative
+      padding-block: .25em
+
+      &::after
+        bottom: 0
+        scale: 0 1
+        content: ''
+        height: 1px
+        inset-inline: 0
+        position: absolute
+        transform-origin: right
+        background: currentColor
+        transition: scale 125ms ease-in-out
+
+      &.active
+        &::after
+          scale: 1 1
+          transform-origin: left
+
+@media screen and (max-width: 728px)
+  .nav
+    padding-inline: 2.5em
