@@ -1,0 +1,31 @@
+.accordion
+  display: flex
+  overflow: hidden
+  isolation: isolate
+  border-radius: .5em
+  flex-direction: column
+  background: rgba(246, 246, 246, 0.45)
+
+  &__header
+    color: white
+    display: flex
+    cursor: pointer
+    padding: .75em 1em
+    position: relative
+    align-items: center
+    background: #FF6060
+    border-radius: .5em
+    justify-content: space-between
+
+    &--title
+      font-weight: 600
+
+    &--icon
+      width: 1.25em
+      aspect-ratio: 1 / 1
+
+      &.opened
+        rotate: -180deg
+
+  &--wrapper
+    padding: 1em
