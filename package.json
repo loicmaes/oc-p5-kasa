@@ -1,8 +1,9 @@
 {
   "name": "kasa",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://loicmaes.github.io/oc-p5-kasa",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
