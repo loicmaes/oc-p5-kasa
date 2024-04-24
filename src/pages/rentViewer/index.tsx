@@ -9,6 +9,9 @@ export default function RentViewer () {
   const {id} = useParams()
   const rent = rents.find((rent: Rent | undefined) => rent?.id === id)
 
+  if (!rent)
+    throw new Response('Not found', { status: 404 })
+
   return (rent && <main className="page viewer">
     <img src={`/images/rent/${rent.thumbnail}`} alt="" className="viewer--thumbnail" />
 
