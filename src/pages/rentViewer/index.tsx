@@ -4,6 +4,7 @@ import {Rent, rents} from "../../assets/mocks/rent.ts";
 import StarIcon from "./starIcon";
 import TagList from "./tagList";
 import Accordion from "../../components/accordion";
+import Carousel from "../../components/carousel";
 
 export default function RentViewer () {
   const {id} = useParams()
@@ -13,7 +14,7 @@ export default function RentViewer () {
     throw new Response('Not found', { status: 404 })
 
   return (rent && <main className="page viewer">
-    <img src={`/images/rent/${rent.thumbnail}`} alt="" className="viewer--thumbnail" />
+    <Carousel className="viewer--thumbnail" elements={rent.gallery} />
 
     <div className="viewer__info">
       <h1 className="viewer__info--title">{rent.title}</h1>

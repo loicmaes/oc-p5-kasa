@@ -1,0 +1,41 @@
+.image-carousel
+  isolation: isolate
+  position: relative
+
+  --_offset: 2em
+  $offset: var(--_offset, 2em)
+
+  &--screen
+    width: 100%
+    height: 100%
+    object-fit: cover
+    border-radius: 2em
+
+  &--action
+    top: 50%
+    border: none
+    color: white
+    outline: none
+    display: grid
+    translate: 0 -50%
+    position: absolute
+    place-items: center
+
+    &:first-of-type
+      left: $offset
+    &:last-of-type
+      right: $offset
+
+  &--count
+    left: 50%
+    color: white
+    bottom: $offset
+    font-weight: 500
+    position: absolute
+
+@media screen and (max-width: 728px)
+  .image-carousel
+    --_offset: 1em
+
+    &--action > svg
+      height: 2em
