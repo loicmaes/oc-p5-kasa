@@ -10,7 +10,7 @@ export type Rent = {
   tags: string[];
   description: string;
   equipments: string[];
-  thumbnail?: string;
+  gallery: string[];
   mark: number;
   owner: Owner;
 }
@@ -20,7 +20,10 @@ export const rents: (Rent | undefined)[] = [
     id: 'loft_cozy_sur_le_canal_saint-martin',
     title: 'Loft cozy sur le Canal Saint-Martin',
     description: 'À venir...',
-    thumbnail: 'cozy_loft_sur_le_canal_saint-martin.png',
+    gallery: [
+        'cozy_loft_sur_le_canal_saint-martin.png',
+        'cozy_loft-2.webp'
+    ],
     location: 'Paris, Île-de-France',
     tags: [
         'Cozy',
