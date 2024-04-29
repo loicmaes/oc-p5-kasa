@@ -1,14 +1,16 @@
 {
+  "homepage": "https://loicmaes.github.io/oc-p5-kasa",
   "name": "kasa",
   "private": false,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
-  "homepage": "https://loicmaes.github.io/oc-p5-kasa",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "pnpm build",
+    "deploy": "npx gh-pages -d dist"
   },
   "dependencies": {
     "react": "^18.2.0",
