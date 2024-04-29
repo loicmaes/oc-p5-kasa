@@ -12,7 +12,7 @@ export const routes: RouteObject[] = [
     errorElement: <NotFound />,
     children: [
       {
-        path: 'oc-p5-kasa',
+        path: '',
         element: <Home />
       },
       {
