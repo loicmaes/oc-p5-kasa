@@ -21,15 +21,17 @@ export default function Carousel ({ elements, className }: Props) {
   const goNext     = () => setCurrentIndex(selectNextPicture(currentIndex, elements.length));
 
   return <div className={`image-carousel ${className ?? ''}`}>
-    <img src={`/images/rent/${elements[currentIndex]}`} alt="" className="image-carousel--screen" />
+    <img src={elements[currentIndex]} alt="" className="image-carousel--screen" />
 
-    <span className="image-carousel--count">{currentIndex + 1}/{elements.length}</span>
+    {elements.length > 1 && <>
+      <span className="image-carousel--count">{currentIndex + 1}/{elements.length}</span>
 
-    <button className="image-carousel--action" onClick={goPrevious}>
-      <LeftCaretIcon />
-    </button>
-    <button className="image-carousel--action" onClick={goNext}>
-      <RightCaretIcon />
-    </button>
-  </div>
+      <button className="image-carousel--action" onClick={goPrevious}>
+        <LeftCaretIcon/>
+      </button>
+      <button className="image-carousel--action" onClick={goNext}>
+        <RightCaretIcon/>
+      </button>
+    </>}
+</div>
 }

@@ -8,7 +8,7 @@ type Props = {
 
 export default function LocationCard ({ rent }: Props) {
   return <article className="card" style={{
-    backgroundImage: `url('/images/rent/${rent?.gallery[0]}')`,
+    backgroundImage: `url('${rent?.cover}')`,
   }}>
     {rent?.id && <NavLink to={`/rent/${rent.id}`} className="card--link"></NavLink>}
 
