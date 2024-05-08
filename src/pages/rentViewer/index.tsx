@@ -25,7 +25,7 @@ export default function RentViewer () {
     <aside className="viewer__credits">
       <header className="viewer__credits__author">
         <p className="viewer__credits__author--name">{rent.host.name}</p>
-        <img src={`/images/owners/${rent.host.picture ?? 'default.png'}`} alt={`Avatar de ${rent.host.name}`} className="viewer__credits__author--avatar"/>
+        <img src={rent.host.picture ?? '/images/owners/default.png'} alt={`Avatar de ${rent.host.name}`} className="viewer__credits__author--avatar"/>
       </header>
 
       <ul className="viewer__credits__mark">
